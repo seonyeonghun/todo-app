@@ -1,6 +1,9 @@
 import React, { useState } from "react"; // useState 모듈 불러오기
-
 import "./App.css";
+
+import Title from "./component/Title";
+import Input from "./component/Input";
+import Output from "./component/Output";
 
 function App() {
   const [todo, setTodo] = useState([]); // todo 라는 state, setTodo라는 modifiter 함수
@@ -24,31 +27,9 @@ function App() {
   const removeTodo = (id) => setTodos(todos.filter((todo, i) => i !== id));
   return (
     <div className='App'>
-      <h1>todo app ({todos.length})</h1>
-
-      <div className='input-field'>
-        <form onSubmit={onSubmit}>
-          <input
-            type='text'
-            placeholder='오늘의 할일을 등록해보세요'
-            onChange={onChange}
-            value={todo}
-            autoFocus
-          />
-
-          <button>등록</button>
-        </form>
-      </div>
-
-      <div className='output-field'>
-        <ul className='lists'>
-          {todos.map((todo, i) => (
-            <li key={i}>
-              {todo} <button onClick={() => removeTodo(i)}>&times;</button>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <Title todos={todos} />
+      <Input todo={todo} onChange={onChange} onSubmit={onSubmit} />
+      <Output todos={todos} removeTodo={removeTodo} />
     </div>
   );
 }
