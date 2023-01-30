@@ -1,10 +1,36 @@
 h1 {
+  margin: 0;
   text-align: center;
   border-bottom: 1px solid #ccc;
-  padding-bottom: 1rem
+  padding: 1rem;
+  background: darkslateblue;
+  color: white;
+  text-transform: capitalize;
 }
 
 .input-field {
   display: flex;
   justify-content: center;
+  padding: 1rem;
+}
+.input-field input {
+  padding: 0.5rem 2rem;
+}
+.input-field button {
+  margin: 0 0 0 0.25rem;
+  padding: 0.3rem 0.5rem;
+}
+
+.lists {
+  padding: 0 1rem;
+}
+.lists li {
+  border-bottom: 1px solid #eee;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+.lists li button {
+  border: 0;
+  border-radius: 50%;
 }

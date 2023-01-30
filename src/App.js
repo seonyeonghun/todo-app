@@ -13,6 +13,10 @@ function App() {
     if (todo.length === 0 || todo === "") {
       alert("할일을 입력하세요!");
       return false;
+    } else if (todo.length > 50) {
+      alert("최대 25자 이내로 작성하세요!");
+      setTodo("");
+      return false;
     }
     setTodo(""); // 할일 입력폼 초기화
     setTodos((todos) => [...todos, todo]); // state는 새로운 값으로만 변경 가능, ES6 구조분해할당 문법
@@ -37,7 +41,7 @@ function App() {
       </div>
 
       <div className='output-field'>
-        <ul>
+        <ul className='lists'>
           {todos.map((todo, i) => (
             <li key={i}>
               {todo} <button onClick={() => removeTodo(i)}>&times;</button>
