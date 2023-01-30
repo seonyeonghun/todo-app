@@ -24,7 +24,7 @@ function App() {
   const removeTodo = (id) => setTodos(todos.filter((todo, i) => i !== id));
   return (
     <div className='App'>
-      <h1>todo app</h1>
+      <h1>todo app ({todos.length})</h1>
 
       <div className='input-field'>
         <form onSubmit={onSubmit}>
